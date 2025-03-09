@@ -1,0 +1,35 @@
+{
+    "tasks": [
+                {
+            "label": "build opencv program",
+            "type": "cppbuild",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/${fileBasenameNoExtension}",
+                "-I/opt/homebrew/opt/opencv/include/opencv4",
+                "-L/opt/homebrew/opt/opencv/lib",
+                "-lopencv_ml",
+                "-lopencv_ximgproc",
+                "-lopencv_highgui",
+                "-lopencv_imgcodecs",
+                "-lopencv_imgproc",
+                "-lopencv_core",
+                //"$(pkg-config --cflags --libs opencv4)"
+                
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build OpenCV program",
+            
+        }
+    ],
+    "version": "2.0.0"
+}
